@@ -9,12 +9,15 @@
       # zsh
       rezsh = "source ~/.zshrc";
       zshrc = "sublime ~/.zshrc";
-      # open workspaces
+      # sublime
+      code = "sublime";
+      s = "sublime";
       scripts = "sublime ~/nft/scripts";
       charts = "sublime ~/nft/charts";
       ".ssh" = "sublime ~/.ssh";
       chainstarters-terraform = "sublime ~/nft/chainstarters-terraform";
       marketplace-graphql = "sublime ~/nft/nft-marketplace-graphql";
+      marketplace-contracts = "sublime ~/nft/nft-marketplace-contracts";
       marketplace-react = "sublime ~/nft/nft-marketplace-react";
       marketplace-docs = "sublime ~/nft/nft-marketplace-docs";
       dashboard-graphql = "sublime ~/nft/nft-dashboard-graphql";
@@ -56,6 +59,7 @@
       pi = "poetry install";
 
       ".." = "cd ..";
+      "myip" = "curl -4 icanhazip.com";
     };
     # test
     ohMyZsh = {

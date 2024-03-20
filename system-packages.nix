@@ -1,10 +1,16 @@
 { pkgs, ... }:
 
+let
+  gammuWithSQL = pkgs.gammu.overrideAttrs (oldAttrs: {
+    configureFlags = (oldAttrs.configureFlags or []) ++ ["--with-postgres"];
+    buildInputs = (oldAttrs.buildInputs or []) ++ [pkgs.postgresql];
+  });
+in
 {
   environment.systemPackages = with pkgs; [
-    # chromium
+    # dmenu
+    # st
     python3
-    beekeeper-studio
     wget
     geckodriver
     firefox
@@ -33,15 +39,21 @@
     bun
     xbindkeys
     xdotool
-    gammu
+    gammuWithSQL
     rofi
     alacritty
     alacritty-theme
-    # rambox
+    rambox
     doctl
     s3cmd
     dbeaver
+    stdenv
     sublime4
     sublime-merge
+    google-chrome
+    kitty
+    inkscape
+    nil
+    home-manager
   ];
 }

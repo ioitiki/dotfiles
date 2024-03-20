@@ -1,4 +1,4 @@
-#!/run/current-system/sw/bin/zsh
+#!/bin/bash
 
 echo 1
 echo 2

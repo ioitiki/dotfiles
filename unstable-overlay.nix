@@ -17,5 +17,6 @@ in
   sublime4 = nixos-24_05.sublime4;
   mailspring = nixos-24_05.mailspring;
   alacritty = nixos-24_05.alacritty;
+  rambox = nixos-24_05.rambox;
   # Ensure other overrides/extensions are correctly defined here
 }
