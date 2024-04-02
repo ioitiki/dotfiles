@@ -8,13 +8,14 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
-    # dmenu
+    dmenu
+    taffybar
     # st
     python3
     wget
     geckodriver
     firefox
-    nodejs_18
+    nodejs_21
     yarn
     awscli2
     kubectl
@@ -55,5 +56,6 @@ in
     inkscape
     nil
     home-manager
+    clockify
   ];
 }

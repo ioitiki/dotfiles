@@ -1,22 +1,12 @@
 self: super:
 let
-  nixos-24_05 = import <nixos-24.05> {
+  nixos-23_11 = import <nixos-23.11> {
     config = {
-      allowUnfree = true;
-      allowUnfreePredicate = pkg: builtins.elem (pkg.name or "") [
-        "sublimetext4-4169"
-        # other packages...
-      ];
-      permittedInsecurePackages = [
-        "openssl-1.1.1w"
-      ];
+      allowUnfree = true;  
     };
   };
 in
 {
-  sublime4 = nixos-24_05.sublime4;
-  mailspring = nixos-24_05.mailspring;
-  alacritty = nixos-24_05.alacritty;
-  rambox = nixos-24_05.rambox;
+  awscli2 = nixos-23_11.awscli2;
   # Ensure other overrides/extensions are correctly defined here
 }

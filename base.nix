@@ -13,10 +13,13 @@
     "android-studio-stable"
     "sublime-merge"
     "google-chrome"
+    "sublimetext4"
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
+    "electron-24.8.6"
+    "openssl-1.1.1w"
   ];
 
   programs = {

@@ -6,6 +6,7 @@
 {
 
   imports = [ # Include the results of the hardware scan.
+    <home-manager/nixos>
     ./hardware-configuration.nix
     ./nvidia.nix
     ./andy-user.nix
