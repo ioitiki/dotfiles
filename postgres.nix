@@ -2,7 +2,7 @@
 {
   services.postgresql = {
     enable = true;
-    port = 54321;
+    settings.port = 54321;
     package = pkgs.postgresql_16;
     ensureDatabases = [
       "dev_db"

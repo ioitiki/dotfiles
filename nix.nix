@@ -1,7 +1,8 @@
 { ... }:
 let
   bunOverlay = import ./bun-overlay.nix;
-  unstableOverlay = import ./unstable-overlay.nix;
+  # dbeaverOverlay = import ./dbeaver-overlay.nix;
+  # unstableOverlay = import ./unstable-overlay.nix;
   # vscodeOverlay = import ./vscode-overlay.nix;
 in
 {
@@ -9,7 +10,7 @@ in
     experimental-features = nix-command flakes
   '';
 
-  nixpkgs.overlays = [ bunOverlay unstableOverlay ];
+  nixpkgs.overlays = [ bunOverlay ];
 
   # Allow all the things
   nixpkgs.config.allowUnfree = true;

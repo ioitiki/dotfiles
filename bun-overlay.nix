@@ -2,10 +2,10 @@ self: super:
 
 {
   bun = super.bun.overrideAttrs (oldAttrs: rec {
-    version = "1.0.35";
+    version = "1.1.20";
     src = super.fetchurl {
       url = "https://github.com/oven-sh/bun/releases/download/bun-v${version}/bun-linux-x64.zip";
-      sha256 = "23b7ea22132cff637da5cc497f9103e29d24abead03e77d818e72201dfba9975";
+      sha256 = "6cb70ad0349a2cecc94ab2113cd1d07a5779aae77c71cab1cf20c881ac0c0775";
     };
   });
 }

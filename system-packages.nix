@@ -1,26 +1,44 @@
 { pkgs, ... }:
 
 let
+  # ord = import ./ord.nix {
+  #   inherit pkgs;
+  # };
+
+  zed-overlay = import ./zed-editor-overlay.nix;
+  customPkgs = import <nixpkgs> {
+    overlays = [ zed-overlay ];
+  };
+
+  zed-fhs = pkgs.buildFHSUserEnv {
+    name = "zed";
+    targetPkgs = pkgs: with customPkgs; [
+      zed-editor
+    ];
+    runScript = "zed";
+  };
+
   gammuWithSQL = pkgs.gammu.overrideAttrs (oldAttrs: {
     configureFlags = (oldAttrs.configureFlags or []) ++ ["--with-postgres"];
     buildInputs = (oldAttrs.buildInputs or []) ++ [pkgs.postgresql];
   });
 in
 {
+  services.flatpak.enable = true;
   environment.systemPackages = with pkgs; [
-    dmenu
-    taffybar
+    # bitcoin
+    # ord
     # st
     python3
     wget
     geckodriver
     firefox
-    nodejs_21
+    nodejs_20
     yarn
     awscli2
     kubectl
     kubectx
-    pgadmin4
+    # pgadmin4
     docker
     kubernetes-helm
     zip
@@ -38,8 +56,8 @@ in
     android-tools
     mailspring
     bun
-    xbindkeys
-    xdotool
+    # xbindkeys
+    # xdotool
     gammuWithSQL
     rofi
     alacritty
@@ -47,15 +65,21 @@ in
     rambox
     doctl
     s3cmd
-    dbeaver
-    stdenv
+    # dbeaver
+    # stdenv
     sublime4
     sublime-merge
-    google-chrome
     kitty
     inkscape
     nil
     home-manager
     clockify
+    solc
+    xorg.xauth
+    godns
+    gitui
+    zed-fhs
+    eslint_d
+    libreoffice
   ];
 }

@@ -28,6 +28,7 @@
       config = {
         user.email = "andy@chainstarters.com";
         user.name = "Andy Malkin";
+        core.sshCommand = "ssh -x";
       };
     };
     direnv = {
@@ -51,7 +52,10 @@
       enable = true;
       setSocketVariable = true;
     };
+    logDriver = "json-file";
+    extraOptions = "--log-opt max-size=50m --log-opt max-file=3";
   };
+
 
   networking.networkmanager.enable = true;
   networking.firewall = {
@@ -82,10 +86,10 @@
   };
 
   # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
+  # services.xserver = {
+  #   layout = "us";
+  #   xkbVariant = "";
+  # };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

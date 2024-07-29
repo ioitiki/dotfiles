@@ -13,8 +13,12 @@
 
   security.pam.services = {
     kwallet.enableKwallet = true;
-    login.u2fAuth = true;
-    sudo.u2fAuth = true;
+    login = {
+      u2fAuth = true;
+    };
+    sudo = {
+      u2fAuth = true;
+    };
   };
 
   security.pam.yubico = {

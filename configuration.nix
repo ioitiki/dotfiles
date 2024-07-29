@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, ... }:
+{ ... }:
 {
 
   imports = [ # Include the results of the hardware scan.
@@ -19,8 +19,13 @@
     ./postgres.nix
     ./base.nix
     ./ssh.nix
+    # ./xmonad.nix
     ./plasma.nix
+    # ./i3.nix
+    # ./hyprland.nix
+    # ./sway.nix
     ./nix.nix
+    # ./chat-openai.nix
   ];
 
   # options = {
