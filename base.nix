@@ -34,6 +34,9 @@
     direnv = {
       enable = true;
     };
+    steam = {
+      enable = true;
+    };
     # Enable the 1Password CLI, this also enables a SGUID wrapper so the CLI can authorize against the GUI app
     _1password = {
       enable = true;
@@ -95,7 +98,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
+  # sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

@@ -25,7 +25,7 @@
     # ./hyprland.nix
     # ./sway.nix
     ./nix.nix
-    # ./chat-openai.nix
+    ./logiops.nix
   ];
 
   # options = {

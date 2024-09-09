@@ -6,9 +6,13 @@ let
   # };
 
   zed-overlay = import ./zed-editor-overlay.nix;
+  bun-overlay = import ./bun-overlay.nix;
+  
   customPkgs = import <nixpkgs> {
-    overlays = [ zed-overlay ];
+    overlays = [ zed-overlay bun-overlay ];
   };
+
+  bun26 = customPkgs.bun26;
 
   zed-fhs = pkgs.buildFHSUserEnv {
     name = "zed";
@@ -34,7 +38,7 @@ in
     geckodriver
     firefox
     nodejs_20
-    yarn
+    yarn-berry
     awscli2
     kubectl
     kubectx
@@ -54,8 +58,10 @@ in
     ngrok
     android-studio
     android-tools
+    jdk17
     mailspring
-    bun
+    bun26
+    prettierd
     # xbindkeys
     # xdotool
     gammuWithSQL
@@ -81,5 +87,6 @@ in
     zed-fhs
     eslint_d
     libreoffice
+    logiops
   ];
 }
